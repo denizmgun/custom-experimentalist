@@ -1,0 +1,35 @@
+[project]
+# UPDATE THIS BEFORE PUBLISHING
+name = "custom"
+description = "Custom experimentalist representing the tutor contribution to the UOS AutoRA block course experimentalist challenge"
+authors = [{ name = "Deniz M Gun", email = "dguen@uos.de" }]
+dynamic = ["version"]
+
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.8,<4"
+
+# ADD NEW DEPENDENCIES HERE
+dependencies = [
+    "autora-core",
+    "scikit-learn",
+    "numpy",
+    "pandas"
+]
+
+[project.optional-dependencies]
+dev = [
+    "autora-core[dev]"
+]
+
+[project.urls]
+homepage = "http://www.empiricalresearch.ai"
+repository = "https://github.com/denizmgun/custom-experimentalist"
+documentation = "https://autoresearch.github.io/autora/"
+
+
+[build-system]
+requires = ["setuptools", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
