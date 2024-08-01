@@ -13,7 +13,8 @@ def sample(
         reference_conditions: Union[pd.DataFrame, np.ndarray],
         num_samples: int = 1) -> pd.DataFrame:
     """
-    Add a description of the sampler here.
+    Samples new conditions to be applied to the next iteration of the experiment. Uses information from previous
+    conditions, the current models. Conditions must be within the range provided by conditions.
 
     Args:
         conditions: The pool to sample from.
@@ -24,7 +25,7 @@ def sample(
         num_samples: number of experimental conditions to select
 
     Returns:
-        Sampled pool of experimental conditions
+        (pd.DataFrame) Sampled pool of experimental conditions
 
     *Optional*
     Examples:
@@ -35,12 +36,10 @@ def sample(
         3
 
     """
-    if num_samples is None:
-        num_samples = conditions.shape[0]
+    # Naive Random sampling for now
+    new_conditions = conditions.sample(num_samples)
 
-    new_conditions = conditions
-
-    return new_conditions[:num_samples]
+    return new_conditions
 
 
 def echo():
